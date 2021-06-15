@@ -59,7 +59,7 @@ router.delete('/:id', async (req, res) => {
 })
 
 //Edit a forum
-router.put('/edit/:id', async (req, res) => {
+router.post('/edit/:id', async (req, res) => {
     const newDetails = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
