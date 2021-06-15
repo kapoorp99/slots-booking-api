@@ -16,6 +16,10 @@ const forumSchema = mongoose.Schema({
     status: {
         type: String,
         default: "Free"
+    },
+    slotTime:{
+        type: String,
+        required: true
     }
 },
 {

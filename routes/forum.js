@@ -109,7 +109,8 @@ router.post('/add_forum', async (req, res) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         phone: req.body.phone,
-        status: req.body.status
+        status: req.body.status,
+        slotTime: req.body.slotTime
     };
     const forum = await Forum.create(forumDetails).then((forumInfo) => {
         res.status(201).json({
