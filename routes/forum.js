@@ -59,14 +59,15 @@ router.delete('/:id', async (req, res) => {
 })
 
 //Edit a forum
-router.post('/edit/:id', async (req, res) => {
+router.post('/edit', async (req, res) => {
     const newDetails = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         phone: req.body.phone,
-        status: req.body.status
+        status: req.body.status,
+        id: req.body.id
     };
-    const previousDetails = await Forum.findById({ _id: req.params.id })
+    const previousDetails = await Forum.findById({ _id: req.body.id })
         .then((details) => {
             temp = details;
         })
