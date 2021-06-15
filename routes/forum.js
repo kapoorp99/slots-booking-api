@@ -91,7 +91,7 @@ router.post('/edit', async (req, res) => {
         }
     }
 
-    const forum = await Forum.findByIdAndUpdate({ _id: req.params.id }, newDetails, { new: true })
+    const forum = await Forum.findByIdAndUpdate({ _id: req.body.id }, newDetails, { new: true })
         .then((forumInfo) => {
             res.status(201).json({
                 status_code: "200",
