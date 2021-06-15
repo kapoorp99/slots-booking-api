@@ -26,6 +26,8 @@ router.post('/', async (req, res) => {
     const forum = await Forum.findOne({ _id: req.body.id })
         .then((forumDetails) => {
             res.status(200).json({
+                status_code: "200",
+                message: "Forum added successfully",
                 forumDetails: forumDetails
             })
         })
