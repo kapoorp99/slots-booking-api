@@ -22,8 +22,8 @@ router.get('/all_forums', async (req, res) => {
 })
 
 // Retrieve a forum on the basis of its id
-router.get('/:id', async (req, res) => {
-    const forum = await Forum.findOne({ _id: req.params.id })
+router.post('/', async (req, res) => {
+    const forum = await Forum.findOne({ _id: req.body.id })
         .then((forumDetails) => {
             res.status(200).json({
                 forumDetails: forumDetails
