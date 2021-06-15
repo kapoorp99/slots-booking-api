@@ -16,7 +16,6 @@ const forumSchema = mongoose.Schema({
     },
     slotTime:{
         type: String,
-        required: true
     }
 },
 {
