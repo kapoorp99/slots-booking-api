@@ -7,6 +7,8 @@ router.get('/all_forums', async (req, res) => {
     const forums_data = await Forum.find().exec().then((forums) => {
         const response = {
             total_forums: forums.length,
+            status_code: "200",
+            message: "Forum added successfully",
             forums: forums.map((forum) => {
                 return (forum)
             })
