@@ -61,7 +61,8 @@ router.put('/edit/:id', async (req, res) => {
     const newDetails = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        phone: req.body.phone
+        phone: req.body.phone,
+        status: req.body.status
     };
     const previousDetails = await Forum.findById({ _id: req.params.id })
         .then((details) => {
@@ -81,6 +82,9 @@ router.put('/edit/:id', async (req, res) => {
         }
         if (newDetails.phone == null || newDetails.phone === "") {
             newDetails.phone = temp.phone;
+        }
+        if (newDetails.status == null || newDetails.status == "") {
+            newDetails.status = temp.status
         }
     }
 
@@ -104,7 +108,8 @@ router.post('/add_forum', async (req, res) => {
     const forumDetails = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        phone: req.body.phone
+        phone: req.body.phone,
+        status: req.body.status
     };
     const forum = await Forum.create(forumDetails).then((forumInfo) => {
         res.status(201).json({
