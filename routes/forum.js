@@ -22,7 +22,7 @@ router.get('/all_forums', async (req, res) => {
 })
 
 // Retrieve a forum on the basis of its id
-router.post('/', async (req, res) => {
+router.post('/getforums', async (req, res) => {
     const forum = await Forum.findOne({ _id: req.body.id })
         .then((forumDetails) => {
             res.status(200).json({
