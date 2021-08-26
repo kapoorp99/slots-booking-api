@@ -12,7 +12,7 @@ const forumSchema = mongoose.Schema({
     },
     status: {
         type: String,
-        default: "Free"
+        default: "Pending"
     },
     slotTime:{
         type: String,
